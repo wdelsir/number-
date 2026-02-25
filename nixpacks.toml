@@ -13,4 +13,4 @@ cmds = [
 ]
 
 [phases.start]
-cmd = "xvfb-run python3 bot.py"
+cmd = "xvfb-run -a python3 bot.py"
