@@ -1,16 +1,33 @@
 [phases.setup]
 nixPkgs = [
-    "python3", 
-    "playwright-driver", 
-    "xvfb-run",
-    "nss", "atk", "at-spi2-atk", "cups", "libdrm", "dbus", "libxkbcommon", "mesa", "pango", "xorg.libX11", "xorg.libXcomposite", "xorg.libXdamage", "xorg.libXext", "xorg.libXfixes", "xorg.libXrandr", "gbm"
+    "python3",
+    "playwright-driver",
+    "glib",
+    "nss",
+    "nspr",
+    "atk",
+    "at-spi2-atk",
+    "libdrm",
+    "libxcb",
+    "libX11",
+    "libXcomposite",
+    "libXdamage",
+    "libXext",
+    "libXfixes",
+    "libXrandr",
+    "mesa",
+    "pango",
+    "cairo",
+    "dbus",
+    "at-spi2-core",
+    "cups"
 ]
 
 [phases.build]
 cmds = [
-    "pip install -r requirements.txt", 
+    "pip install -r requirements.txt",
     "python3 -m playwright install chromium"
 ]
 
 [phases.start]
-cmd = "xvfb-run -a python3 bot.py"
+cmd = "python3 bot.py"
